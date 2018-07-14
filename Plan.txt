@@ -1,0 +1,70 @@
+Rules of the game:
+------------------
+
+Players are dealt two cards face up.
+The deal is dealt two cards, one face up on face down.
+
+Players can either:
+	Hit  	- dealt the next card from the deck face up.
+	Stick 	- stop accepting new cards 
+
+Aces can be either 1 or 11, they are automatically assign 1 to prevent a hand exceeding 21 (bust)
+A hand containing an ace is classified as "soft"
+
+A players turn ends when either the following are true:
+	Bust 	- Exceeded 21
+	Stick 	- stop accepting new cards
+
+It is then dealers turn. The dealer:
+	Shows their face down card
+	if their hand is 17 and not "soft", they automatically stick
+	if their hand is "soft" 17 (contains an ace and one or more cards totalling 6):
+		they must also hit
+	if their hand is less then 17, they hit until >17 or 21 is reached
+	if their hand is 21, they stick
+
+A dealer busts if there hand is over 21.
+
+Players win by:
+ 	not busting and having a total higher than the dealer
+ 	not busting and having the dealer bust
+	getting a blackjack without the dealer getting a blackjack
+		If the player and dealer have the same total, 
+			this is called a "push"
+			the money is returned to the player
+
+Otherwise, the dealer wins.
+
+
+
+
+Deck:
+	attr:
+		list of 52 unique cards
+		
+	- the deck is based on a stack, where cards are picked in order from the top
+	
+	- the order of the cards can be randomised/ shuffled 
+
+hand:
+	attr
+		list of cards
+		soft - contains an ace
+		value
+		
+cards:
+	attr:
+		suit(heart, diamond, club, spade)
+		rank (Ace (can be 1 or 11), 2, 3, 4, 5, 6, 7, 8, 9, 10, jack (10), queen (10), king (10))
+		value - tuple of intergers, aces has 1 and 11 as values.
+
+
+
+Player:
+	- has a balance of cash
+	
+	- funds can be removed from the balance during a bet
+	- funds can be added to the balance during a win 	
+	
+	- has a hand made up of two cards
+
