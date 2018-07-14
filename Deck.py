@@ -34,7 +34,12 @@ class card():
         return f'{self.rank}{self.suit}'
         
 class deck():
+    '''
+    represents a deck of 52 card
+    can contain multiples 52 cards if num is specified.
     
+    
+    '''
     def __init__(self,num=1):
         
         pass
