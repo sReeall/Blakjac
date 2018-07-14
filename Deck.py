@@ -36,17 +36,39 @@ class card():
 class deck():
     '''
     represents a deck of 52 card
-    can contain multiples 52 cards if num is specified.
+    can contain multiples 52 cards if num is specified (not implimented yet)
     
     
     '''
     def __init__(self,num=1):
+        cards = []*52
         
-        pass
-    
-    
+        # create numbered heart suit
+        
+            
+    def initSuits(self,suit):
+        '''
+        returns a list of 13 cards for specified suit
+        '''
+        cards = []*13
+        
+        # first 9 cards are numbered face cards
+        i = 2
+        for j in range(0,8):
+            cards[j] = card(suit,i)
+            i =+ 1
+        
+        # next cards are 'J', 'Q', 'K' and 'A'
+        cards[9] = card(suit,'J')
+        cards[10] = card(suit,'Q')
+        cards[11] = card(suit,'K')
+        cards[12] = card(suit,'A')
+        
+        return cards
     
 if __name__=='__main__':
+    
+    
     # test class card
 #     print('Create a card with suit H and rank J')
 #     card1 = card('H','J')
@@ -62,4 +84,3 @@ if __name__=='__main__':
 #     card3 = card('D','2')
 #     print(card3)
 #     print(card3.value)
-    
