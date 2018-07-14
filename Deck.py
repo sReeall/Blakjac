@@ -68,6 +68,10 @@ class deck():
     
 if __name__=='__main__':
     
+    # test class deck
+    print('Creating a deck of cards')
+    deckofcards = deck()
+    deckofcards.initSuits('H')
     
     # test class card
 #     print('Create a card with suit H and rank J')
