@@ -44,7 +44,9 @@ class deck():
         cards - list of 52 cards as found in a deck
         
     methods:
-        suffle - mix up the cards
+        shuffle - mix up the cards
+        nextcard - takes the top card
+        isempty - checks to see if there are any cards in the deck
         
     '''
     def __init__(self,num=1):
@@ -118,19 +120,35 @@ class deck():
         # randomly shuffles list cards
         random.shuffle(self.cards)
 
+    def nextcard(self):
+        '''
+        uses pop to take the top card from deck.cards list
+        '''
+        return self.cards.pop()
+    
     
 if __name__=='__main__':
     pass
     # test class deck
     mydeck = deck()
- 
+   
 #     for i in mydeck.cards:
 #         print(i)
-    
+      
     mydeck.shuffe()
-
+  
     for i in mydeck.cards:
         print(i)
+    
+    print(f'top card is: {mydeck.nextcard()}')
+
+    print(f'mydeck now has {len(mydeck.cards)}')
+
+    print(f'top card is: {mydeck.nextcard()}')
+
+    print(f'top card is: {mydeck.nextcard()}')
+
+    print(f'mydeck now has {len(mydeck.cards)}')
     
     # test class card
 #     print('Create a card with suit H and rank J')
