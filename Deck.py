@@ -4,6 +4,7 @@ Created on 14 Jul 2018
 @author: sReeall
 '''
 
+import random
 
 class card():
     '''
@@ -112,15 +113,25 @@ class deck():
         spade[12] = card('S','K')
 
         self.cards = hearts + dia + club + spade
-        
 
+    def shuffe(self):
+        # randomly shuffles list cards
+        random.shuffle(self.cards)
+
+    
 if __name__=='__main__':
     pass
     # test class deck
-#     mydeck = deck()
-# 
+    mydeck = deck()
+ 
 #     for i in mydeck.cards:
 #         print(i)
+    
+    mydeck.shuffe()
+
+    for i in mydeck.cards:
+        print(i)
+    
     # test class card
 #     print('Create a card with suit H and rank J')
 #     card1 = card('H','J')
