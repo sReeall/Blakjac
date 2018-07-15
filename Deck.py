@@ -122,11 +122,18 @@ class deck():
 
     def nextcard(self):
         '''
-        uses pop to take the top card from deck.cards list
+        uses pop to take the top card from deck.cards list.
+        
+        returns None if deck is empty
         '''
-        return self.cards.pop()
-    
-    
+        if not self.isempty():
+            return self.cards.pop()
+        else:
+            return None
+            
+    def isempty(self):
+        return len(self.cards) == 0
+        
 if __name__=='__main__':
     pass
     # test class deck
