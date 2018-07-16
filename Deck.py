@@ -134,28 +134,24 @@ class deck():
     def isempty(self):
         return len(self.cards) == 0
         
-if __name__=='__main__':
-    pass
-    # test class deck
-    mydeck = deck()
+# if __name__=='__main__':
+#     pass
+#     test class deck
+#     mydeck = deck()
    
 #     for i in mydeck.cards:
 #         print(i)
       
-    mydeck.shuffe()
-  
-    for i in mydeck.cards:
-        print(i)
-    
-    print(f'top card is: {mydeck.nextcard()}')
-
-    print(f'mydeck now has {len(mydeck.cards)}')
-
-    print(f'top card is: {mydeck.nextcard()}')
-
-    print(f'top card is: {mydeck.nextcard()}')
-
-    print(f'mydeck now has {len(mydeck.cards)}')
+#     mydeck.shuffe()
+#   
+#     print('shuffled deck:')
+#   
+#     for i in mydeck.cards:
+#         print(i)
+#     
+#     for i in range(len(mydeck.cards)+1):
+#         print(f'top card is: {mydeck.nextcard()}')
+#         print(f'mydeck now has {len(mydeck.cards)}')
     
     # test class card
 #     print('Create a card with suit H and rank J')
