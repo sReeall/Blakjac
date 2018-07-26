@@ -6,6 +6,7 @@ Created on 14 Jul 2018
 
 import random
 
+
 class card():
     '''
     used to represent a single card and is basic component of deck class.
@@ -19,6 +20,9 @@ class card():
         rank: 2 - 10, 'J', 'Q', 'K', 'A'
         value: tuple used as rank 'A' has 1 and 11
         
+    methods:
+        isAce() - returns true if ace
+        
     '''
     def __init__ (self,suit,rank):
         self.suit = suit
@@ -30,7 +34,11 @@ class card():
         except: # must not be 2 - 10 rank
             # check if ace
             if rank != 'A' : self.value = 10,
-            else: self.value = 1,11
+            else: self.value = 11,1
+        
+    def isAce(self):
+        return self.rank == 'A'
+    
     
     def __str__(self):
         return f'{self.rank}{self.suit}'
@@ -134,11 +142,11 @@ class deck():
     def isempty(self):
         return len(self.cards) == 0
         
-# if __name__=='__main__':
+if __name__=='__main__':
 #     pass
 #     test class deck
 #     mydeck = deck()
-   
+    pass   
 #     for i in mydeck.cards:
 #         print(i)
       
