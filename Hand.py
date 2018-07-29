@@ -35,7 +35,9 @@ class hand ():
         self.isBust = False
         self.isblackjack = False
         
-    
+    def getcard(self,num):
+        return self.cards[num]
+
     def addcard(self,card):
         
         # check if card is ace

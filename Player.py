@@ -74,24 +74,24 @@ class player():
 
 
 
-if __name__ == '__main__':
-    # testing player class
-    
-    testdeck = deck()
-    
-    testdeck.shuffe()
-    
-    testplayer = player("sunny",100)
-    
-    print(testplayer)
-    
-    playerbet = testplayer.placeBet()
-    
-    print(f'{testplayer.getName()} has placed a bet of {playerbet}')
-    
-    print(f'dealing card to {testplayer.getName()}')
-    testplayer.hit(testdeck)
-    testplayer.hit(testdeck)
-    
-    print(f"{testplayer.getName()} has the folloiwng hand {testplayer.getHand()}")
-    
+# if __name__ == '__main__':
+#     # testing player class
+#     
+#     testdeck = deck()
+#     
+#     testdeck.shuffe()
+#     
+#     testplayer = player("sunny",100)
+#     
+#     print(testplayer)
+#     
+#     playerbet = testplayer.placeBet()
+#     
+#     print(f'{testplayer.getName()} has placed a bet of {playerbet}')
+#     
+#     print(f'dealing card to {testplayer.getName()}')
+#     testplayer.hit(testdeck)
+#     testplayer.hit(testdeck)
+#     
+#     print(f"{testplayer.getName()} has the folloiwng hand {testplayer.getHand()}")
+#     
