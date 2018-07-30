@@ -28,6 +28,7 @@ class player():
             except:
                 print('Please enter a number!')
                 continue
+            
             if bet == 0:
                 print('This is gambling, you cant bet nothing :)')
                 continue

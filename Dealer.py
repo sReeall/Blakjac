@@ -5,7 +5,7 @@ Created on 29 Jul 2018
 '''
 
 from Player import player
-from Deck import deck
+
 
 class dealer(player):
     
@@ -39,29 +39,29 @@ class dealer(player):
     def __str__(self):
         return "hello I'm the dealer"    
         
-if __name__ == '__main__':
-
-    testdeck = deck()
-    
-    testdeck.shuffe()
-    
-    testDealer = dealer()
-    
-    print(testDealer) 
-
-    # deal cards to dealer
-    
-    print(f'dealing card to {testDealer.getName()}')
-    testDealer.hit(testdeck)
-    testDealer.hit(testdeck)
-     
-    print(f"{testDealer.getName()} has the folloiwng hand {testDealer.getHand()}")
-     
-    print('Setting to dealers turn')
-    
-    testDealer.setIsTurn(True)
-    
-    if testDealer.getIsTurn() : 
-        print('Its the dealers turn, we can not show both cards')
-        print(f"{testDealer.getName()} has the folloiwng hand {testDealer.getHand()}")
+# if __name__ == '__main__':
+# 
+#     testdeck = deck()
+#     
+#     testdeck.shuffe()
+#     
+#     testDealer = dealer()
+#     
+#     print(testDealer) 
+# 
+#     # deal cards to dealer
+#     
+#     print(f'dealing card to {testDealer.getName()}')
+#     testDealer.hit(testdeck)
+#     testDealer.hit(testdeck)
+#      
+#     print(f"{testDealer.getName()} has the folloiwng hand {testDealer.getHand()}")
+#      
+#     print('Setting to dealers turn')
+#     
+#     testDealer.setIsTurn(True)
+#     
+#     if testDealer.getIsTurn() : 
+#         print('Its the dealers turn, we can not show both cards')
+#         print(f"{testDealer.getName()} has the folloiwng hand {testDealer.getHand()}")
         
