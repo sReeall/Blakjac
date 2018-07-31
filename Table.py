@@ -25,7 +25,10 @@ class table():
         print('|{:^60}'.format('')+'|')
         print(f'| {self.player.getName():29} {self.dealer.getName():29}|')
         print('|{:^60}'.format('')+'|')
-        print(f'{str(self.player.getHand()):30} {str(self.dealer.getHand()):30}')
+        if (self.player.getHand()).isEmpty(): 
+            print('|{:^60}'.format('')+'|')
+        else: 
+            print(f'| {str(self.player.getHand()):29} {str(self.dealer.getHand()):29}|')
         print('|{:^60}'.format('')+'|')
         print('|{:^60}'.format('')+'|')
         print('{:-^60}'.format(''))
