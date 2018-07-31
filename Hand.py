@@ -46,6 +46,10 @@ class hand ():
             self.numAces += 1
         
         self.cards.append(card)
+        
+        # we need to run getvalue() as this will set isBlackJack and isBust
+        
+        temp = self.getvalue()
     
     def getvalue(self):
         
