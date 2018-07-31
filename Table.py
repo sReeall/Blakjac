@@ -32,7 +32,10 @@ class table():
         print('|{:^30}'.format('') + '|'+ '{:^29}'.format('') +'|')
         
         playerHandValueStr = "Hand Value: " + str(self.player.hand.getvalue())
-        dealerHandValuestr = "Hand Value: " + str(self.dealer.hand.getvalue())
+        
+        if self.dealer.getIsTurn():
+            dealerHandValuestr = "Hand Value: " + str(self.dealer.hand.getvalue())
+        else: dealerHandValuestr = ''
         
         print(f'| {playerHandValueStr:29}| {dealerHandValuestr:28}|')
 #        print('|{:^60}'.format('')+'|')
