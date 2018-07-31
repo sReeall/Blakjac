@@ -21,13 +21,14 @@ class table():
         print(f'Player: {self.player.getName()}')
         print(f'Current Balance: {self.player.getBalance()}')
         print('')
-        print('------\t Table\t ------')
-        print('')
-        print(f'{self.player.getName():20} {self.dealer.getName()}')
-        print('')
-        print(f'{str(self.player.getHand()):20} {self.dealer.getHand()}')
-        print('')
-        print('')
+        print("|{:-^60}|".format(" Table "))
+        print('|{:^60}'.format('')+'|')
+        print(f'| {self.player.getName():29} {self.dealer.getName():29}|')
+        print('|{:^60}'.format('')+'|')
+        print(f'{str(self.player.getHand()):30} {str(self.dealer.getHand()):30}')
+        print('|{:^60}'.format('')+'|')
+        print('|{:^60}'.format('')+'|')
+        print('{:-^60}'.format(''))
         print('Bet')
         print(f'{self.player.getBet()}')
     def clearBoard(self):
@@ -35,10 +36,10 @@ class table():
         pass
     
      
-# if __name__=='__main__':
-#       
-#     testplayer = player('sunny')
-#     testdealer = dealer()
-#     testtable = table(testplayer,testdealer)
-#       
-#     testtable.displayBoard()
+if __name__=='__main__':
+       
+    testplayer = player('sunny')
+    testdealer = dealer()
+    testtable = table(testplayer,testdealer)
+       
+    testtable.displayBoard()
