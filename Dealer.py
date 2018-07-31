@@ -43,6 +43,8 @@ class dealer(player):
             else: return self.getOneCard() + ' XX'
 
     
+    
+    
     def __str__(self):
         return "hello I'm the dealer"    
         
