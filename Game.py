@@ -145,6 +145,7 @@ def startGame():
         
         gametable.displayBoard()
         
+        sleep(3)
         while True:
             
             # check to see if dealer has black jack
@@ -179,9 +180,54 @@ def startGame():
         # if player bust, check to see if dealer bust = draw
         # else, if deal hans't bust = loose bet
         
-        
-        
-        # player hand beats
+        if player1.hand.isBust:
+            
+            if dealer1.hand.isBust:
+                #both player and dealer are bust
+                
+                print(f'{player1.getName()} and {dealer1.getName()} are bust!')
+                print(f'Game is a a draw, returning bet')
+                
+                sleep(3)
+                
+                player1.setBalance(player1.getBalance() + player1.getBet())
+                
+                print(f'Player: {player1.getName()}')
+                print(f'Current Balance: {player1.getBalance()}')
+            
+                sleep(3)
+            
+            else: 
+                #deal is not bust, player must have lost
+                
+                print(f'{player1.getName()} lost!')
+                #no futher processing as replay logic is clear bet and preserve player balancee.
+                
+                sleep(3)
+            
+        else: #player hand is not bust
+            
+            if dealer1.hand.isBust:
+                # player is not bust, dealer is bust, player wins!
+                # double bet and add to balance 
+                print(f'{player1.getName()} is a winner!')
+                
+                sleep(3)
+                
+                player1.setBalance(player1.getBalance() + (player1.getBet() * 2) )
+                
+                print(f'Player: {player1.getName()}')
+                print(f'Current Balance: {player1.getBalance()}')
+            
+                sleep(3)
+            
+            else:
+                #player is not bust and dealer is not bust
+                print('neither player or dealer is bust!')
+            
+                # add logic to handle winning hand
+            
+
         
         # replay logic
         
