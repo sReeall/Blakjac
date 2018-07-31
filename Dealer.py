@@ -36,10 +36,11 @@ class dealer(player):
         if len(self.hand.cards) <= 0: return ''
         
         elif len(self.hand.cards) == 1:
-            if self.isTurn: return player.getHand(self)
-            else: return self.getOneCard()
+            return self.getOneCard()
         
-        else: return self.getOneCard() + ' XX'
+        else:
+            if self.isTurn: return player.getHand(self)
+            else: return self.getOneCard() + ' XX'
 
     
     def __str__(self):
