@@ -135,14 +135,7 @@ while True:
     
     # dealer turn logic
     
-    print('Deaers Turn')
     
-    sleep(2)
-    
-    # show dealers hidden card
-    dealer.setIsTurn(True)
-    
-    gametable.displayBoard()
     
     # replay logic
     
@@ -166,7 +159,6 @@ while True:
         player1.hand.clearHand()
         
         dealer.hand.clearHand()
-        dealer.setIsTurn(False)
         continue
     else:
         print('GoodBye!') 
