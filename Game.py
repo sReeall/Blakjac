@@ -97,12 +97,34 @@ while True:
     # choose hit or stick
     
     while True:
+
+        #need to check if player already has black jack
+        
+        if player1.hand.isblackjack: 
+            print(f'{player1.getName()} has blackJack!')
+            break
         
         hit = input(f'{player1.getName()} hit or stick? [enter h or s]:')
         if hit.lower() == 'h':
             #hit
-            print('Hit')
-            break
+            player1.hit(gamedeck)
+            
+            gametable.displayBoard()
+    
+            sleep(2)
+                        
+            # check for black jack
+            if player1.hand.isblackjack:
+                print(f'{player1.getName()} has blackJack!')
+                break
+            #check for bust
+            elif player1.hand.isBust:
+                print(f'{player1.getName()} is Bust!')
+                break
+            # ask for hit or stick again
+            else:
+                continue
+            
         elif hit.lower() == 's':
             #stick
             print('Stick')
@@ -110,8 +132,25 @@ while True:
         else:
             #incorrect input
             print("Incorrect option, please use h or s for hit or stick")
-                
     
-    break
+    while True:
+        
+        playagain = input('Play again?[y or n]').lower()
+                 
+        if (playagain == 'y'): 
+            isGameOn = True
+            break
+        elif (playagain == 'n'): 
+            isGameOn = False
+            break
+        else: continue
+        
+    if isGameOn: 
+        # need to clear board, and reset player hanad and reset dealer hand
+        
+        continue
+    else:
+        print('GoodBye!') 
+        break
 
     
