@@ -72,6 +72,13 @@ class hand ():
             
         return value
     
+    def clearHand(self):
+        self.cards = []
+        self.containsAce = False
+        self.numAces = 0
+        self.isBust = False
+        self.isblackjack = False
+    
     def __str__(self):
         strcards = ''
         for i in self.cards:
