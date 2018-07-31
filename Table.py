@@ -23,9 +23,9 @@ class table():
         print('')
         print('------\t Table\t ------')
         print('')
-        print(f'{self.player.getName()}\t\t {self.dealer.getName()}')
+        print(f'{self.player.getName():20} {self.dealer.getName()}')
         print('')
-        print(f'{self.player.getHand()}\t\t {self.dealer.getHand()}')
+        print(f'{str(self.player.getHand()):20} {self.dealer.getHand()}')
         print('')
         print('')
         print('Bet')
@@ -36,9 +36,9 @@ class table():
     
      
 # if __name__=='__main__':
-#      
+#       
 #     testplayer = player('sunny')
 #     testdealer = dealer()
 #     testtable = table(testplayer,testdealer)
-#      
+#       
 #     testtable.displayBoard()
