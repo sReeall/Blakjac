@@ -34,6 +34,10 @@ class hand ():
         self.numAces = 0
         self.isBust = False
         self.isblackjack = False
+    
+    def isEmpty(self):
+        if len(self.cards) == 0: return True
+        else: return False
         
     def getcard(self,num):
         return self.cards[num]
