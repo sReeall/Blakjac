@@ -94,7 +94,7 @@ while True:
     
     sleep(2)
     
-    # choose hit or stick
+    # choose hit or stick logic
     
     while True:
 
@@ -133,6 +133,12 @@ while True:
             #incorrect input
             print("Incorrect option, please use h or s for hit or stick")
     
+    # dealer turn logic
+    
+    
+    
+    # replay logic
+    
     while True:
         
         playagain = input('Play again?[y or n]').lower()
@@ -143,11 +149,16 @@ while True:
         elif (playagain == 'n'): 
             isGameOn = False
             break
-        else: continue
+        else:
+            print('Opps! please enter y or n') 
+            continue
         
     if isGameOn: 
         # need to clear board, and reset player hanad and reset dealer hand
+        player1.clearBet()
+        player1.hand.clearHand()
         
+        dealer.hand.clearHand()
         continue
     else:
         print('GoodBye!') 
