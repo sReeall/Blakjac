@@ -74,37 +74,37 @@ class hand ():
             strcards += str(i) + ' '
         return strcards
         
-if __name__=='__main__':
-    
-    myhand = hand()
-    mydeck = deck()
-    # shuffle the deck
-    mydeck.shuffe()
-       
-    for i in range(0,10):
-
-        #peek at the top card
-        print(f'Top card in the deck is {mydeck.cards[-1]}')
-        # deal one card from the deck
-        myhand.addcard(mydeck.nextcard())
-        
-        print('Adding to hand')
-        
-        print(f'myhand is {myhand}')
-        
-        if myhand.containsAce: print(f"myhand contains {myhand.numAces} ace")
-
-        
-        print(f"the value of my hand is {myhand.getvalue()}")
-        
-        if myhand.isblackjack: 
-            print("My hand is Black Jack!")
-            print("")
-            break
-        
-        if myhand.isBust: 
-            print("My hand is bust!")
-            print("")
-            break
-        
-        print("")
+# if __name__=='__main__':
+#     
+#     myhand = hand()
+#     mydeck = deck()
+#     # shuffle the deck
+#     mydeck.shuffe()
+#        
+#     for i in range(0,10):
+# 
+#         #peek at the top card
+#         print(f'Top card in the deck is {mydeck.cards[-1]}')
+#         # deal one card from the deck
+#         myhand.addcard(mydeck.nextcard())
+#         
+#         print('Adding to hand')
+#         
+#         print(f'myhand is {myhand}')
+#         
+#         if myhand.containsAce: print(f"myhand contains {myhand.numAces} ace")
+# 
+#         
+#         print(f"the value of my hand is {myhand.getvalue()}")
+#         
+#         if myhand.isblackjack: 
+#             print("My hand is Black Jack!")
+#             print("")
+#             break
+#         
+#         if myhand.isBust: 
+#             print("My hand is bust!")
+#             print("")
+#             break
+#         
+#         print("")

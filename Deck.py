@@ -142,11 +142,11 @@ class deck():
     def isempty(self):
         return len(self.cards) == 0
         
-if __name__=='__main__':
-#     pass
-#     test class deck
-#     mydeck = deck()
-    pass   
+# if __name__=='__main__':
+# #     pass
+# #     test class deck
+# #     mydeck = deck()
+#     pass   
 #     for i in mydeck.cards:
 #         print(i)
       

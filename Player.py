@@ -14,7 +14,8 @@ class player():
         self.name = name
         self.balance = deposit
         self.hand = hand()
-    
+        self.bet = 0
+        
     def placeBet (self):
         
         # need to make sure there is enough in the balance
@@ -39,12 +40,16 @@ class player():
                
             if (self.getBalance() - bet) >= 0 :
                 self.setBalance(self.getBalance() - bet)
+                self.bet = bet
                 break
             
             else :
                 print(f'your balance of {self.getBalance()} is too low for that bet')
 
         return bet
+    
+    def getBet(self):
+        return self.bet
     
     def addChips (self,ammount):
         self.balance = self.balance + ammount

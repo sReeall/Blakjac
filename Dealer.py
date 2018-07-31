@@ -27,14 +27,20 @@ class dealer(player):
 
     def getOneCard(self):
         #deal needs to be able to return just one card when it is not his turn
-        return str(self.hand.getcard(0)) + " XX"
+        
+        return str(self.hand.getcard(0))
 
     def getHand(self):
         # dealer need to hide one card in the hand if it is not his turn
         
-        if self.isTurn: return player.getHand(self)
-            
-        else: return self.getOneCard()
+        if len(self.hand.cards) <= 0: return ''
+        
+        elif len(self.hand.cards) == 1:
+            if self.isTurn: return player.getHand(self)
+            else: return self.getOneCard()
+        
+        else: return self.getOneCard() + ' XX'
+
     
     def __str__(self):
         return "hello I'm the dealer"    
