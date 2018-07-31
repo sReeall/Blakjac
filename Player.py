@@ -15,6 +15,9 @@ class player():
         self.balance = deposit
         self.hand = hand()
         self.bet = 0
+
+    def clearBet(self):
+        self.bet = 0
         
     def placeBet (self):
         
