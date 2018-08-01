@@ -192,6 +192,7 @@ def startGame():
                 
                 player1.setBalance(player1.getBalance() + player1.getBet())
                 
+                print('')
                 print(f'Player: {player1.getName()}')
                 print(f'Current Balance: {player1.getBalance()}')
             
@@ -216,6 +217,7 @@ def startGame():
                 
                 player1.setBalance(player1.getBalance() + (player1.getBet() * 2) )
                 
+                print('')
                 print(f'Player: {player1.getName()}')
                 print(f'Current Balance: {player1.getBalance()}')
             
@@ -223,11 +225,36 @@ def startGame():
             
             else:
                 #player is not bust and dealer is not bust
-                print('neither player or dealer is bust!')
+                #print('neither player or dealer is bust!')
             
                 # add logic to handle winning hand
+                
+                if player1.hand.getvalue() > dealer1.hand.getvalue():
+                    #player wins
+                    print(f'{player1.getName()} is the winner')
+                    player1.setBalance(player1.getBalance() + (player1.getBet() * 2) )
+                
+                    print('')
+                    print(f'Player: {player1.getName()}')
+                    print(f'Current Balance: {player1.getBalance()}')                    
             
-
+                    sleep(3)
+                elif player1.hand.getvalue() < dealer.hand.getvalue():
+                    #dealer wins
+                    print(f'{dealer1.getName()} is the winner')
+                else:
+                    #must be a draw
+                    print(f'Game is a a draw, returning bet')
+                
+                    sleep(3)
+                
+                    player1.setBalance(player1.getBalance() + player1.getBet())
+                    
+                    print('')
+                    print(f'Player: {player1.getName()}')
+                    print(f'Current Balance: {player1.getBalance()}')
+                
+                    sleep(3)
         
         # replay logic
         
