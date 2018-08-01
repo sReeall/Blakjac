@@ -5,6 +5,8 @@ Created on 30 Jul 2018
 '''
 from Player import player
 from Dealer import dealer
+from os import system
+from time import sleep
 
 class table():
     #
@@ -23,8 +25,16 @@ class table():
         print('')
         print("|{:-^60}|".format(" Table "))
         print('|{:^30}'.format('') + '|'+ '{:^29}'.format('') +'|')
-        print(f'| {self.player.getName():29}| {self.dealer.getName():28}|')
+        
+        # names
+        
+        print(f'| {self.player.getName():^29}| {self.dealer.getName():^28}|')
         print('|{:^30}'.format('') + '|'+ '{:^29}'.format('') +'|')
+        print('|{:-^60}|'.format(''))        
+        
+        
+        # hands
+        
         if (self.player.getHand()).isEmpty(): 
             print('|{:^30}'.format('') + '|'+ '{:^29}'.format('') +'|')
         else: 
@@ -42,9 +52,12 @@ class table():
         print('|{:-^60}|'.format(''))
         print('Bet')
         print(f'{self.player.getBet()}')
-    def clearBoard(self):
         
-        pass
+        
+    def clearScreen (self):
+        
+        system('cls')
+        
     
      
 if __name__=='__main__':
@@ -53,4 +66,22 @@ if __name__=='__main__':
     testdealer = dealer()
     testtable = table(testplayer,testdealer)
        
+    testtable.displayBoard()
+    
+    print('clear screen in...3')
+    
+    sleep(1)
+    
+    print('2')
+    
+    sleep (1)
+    
+    print('1')
+    
+    sleep(1)
+    
+    testtable.clearScreen()
+    
+    sleep(3)
+    
     testtable.displayBoard()
