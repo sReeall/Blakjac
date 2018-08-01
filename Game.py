@@ -171,8 +171,8 @@ def startGame():
            
             gametable.clearScreen()
             gametable.displayBoard()
-            print('Dealers Turn')           
-            sleep(3)
+          
+
             
 
             # check to see if dealer has black jack
@@ -188,7 +188,8 @@ def startGame():
                 sleep(3)
                 break
             
-            
+            print('Dealers Turn') 
+            sleep(3)                        
             # check if dealer has less then 17, or 17 but with an ace, they hit
             
             if (dealer1.hand.getvalue() < 17) or (dealer1.hand.getvalue() == 17 and dealer1.hand.containsAce):
@@ -289,7 +290,15 @@ def startGame():
                 
                     sleep(3)
         
+        #game over
+        
+        if player1.getBalance() <=0:
+            print(f'{player1.getName()} has no more chips. Game over')        
+            break
+        
         # replay logic
+
+
         
         while True:
             
@@ -314,7 +323,20 @@ def startGame():
             dealer1.setIsTurn(False)
             
             gametable.clearScreen()
+            
             #add condition to test if deck is 75% empty (len <= 13), start a new deck and shuffle
+                      
+            if len(gamedeck.cards) <= 13:
+                print(f'Number of cards is runnng low. Only {len(gamedeck.cards)} card left.')
+                print('Starting new deck')
+                gamedeck = deck()
+                gamedeck.shuffe()
+                
+                sleep(3)
+
+            
+
+            
             
             continue
         else:
