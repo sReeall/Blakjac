@@ -10,7 +10,7 @@ from Deck import deck
 from time import sleep
 
 def startGame():
-        
+           
     print('Welcome to BlakJac')
     
     print('')
@@ -45,7 +45,7 @@ def startGame():
     print(f'Welcome {player1.getName()} your balance is now {player1.getBalance()}')
     
     while True:
-        startgame = str(input('Are you to start?[y/n]'))
+        startgame = str(input('Are you ready to play?[y/n]'))
         if startgame.lower() == 'y': break
         elif startgame.lower() == 'n': 
             print('Ok we will wait!')
@@ -53,6 +53,17 @@ def startGame():
     
     print('Get Ready...')
     sleep(3)
+    print('3')
+    sleep(1)
+    print('2')
+    sleep(1)
+    print('1')
+    sleep(1)
+    print('GO!!')
+    sleep(1)
+        
+    gametable.clearScreen()
+
     
     # main game logic
     
@@ -64,6 +75,7 @@ def startGame():
         print('')
         print('')
         
+        gametable.clearScreen()
         gametable.displayBoard()
         
         print('Dealing cards')
@@ -72,26 +84,35 @@ def startGame():
         
         player1.hit(gamedeck)
         
+        gametable.clearScreen()
         gametable.displayBoard()
+        print('Dealing cards')
         
+               
         sleep(2)
         
         player1.hit(gamedeck)
     
+        gametable.clearScreen()
         gametable.displayBoard()
+        print('Dealing cards')
         
        
         sleep(2)
         
         dealer1.hit(gamedeck)
     
+        gametable.clearScreen()
         gametable.displayBoard()
+        print('Dealing cards')
         
         sleep(2)
     
         dealer1.hit(gamedeck)
         
+        gametable.clearScreen()
         gametable.displayBoard()
+        print('Dealing cards')
         
         sleep(2)
         
@@ -100,6 +121,9 @@ def startGame():
         while True:
     
             #need to check if player already has black jack
+            
+            gametable.clearScreen()
+            gametable.displayBoard()
             
             if player1.hand.isblackjack: 
                 print(f'{player1.getName()} has blackJack!')
@@ -110,6 +134,7 @@ def startGame():
                 #hit
                 player1.hit(gamedeck)
                 
+                gametable.clearScreen()
                 gametable.displayBoard()
         
                 sleep(2)
@@ -136,27 +161,31 @@ def startGame():
         
         # dealer1 turn logic
         
-        print('Dealers Turn')
-        
-        sleep(2)
-        
-        # show dealers hidden card
-        dealer1.setIsTurn(True)
-        
-        gametable.displayBoard()
-        
         sleep(3)
+
+        dealer1.setIsTurn(True)
+
         while True:
+           
+            # show dealers hidden card
+           
+            gametable.clearScreen()
+            gametable.displayBoard()
+            print('Dealers Turn')           
+            sleep(3)
             
+
             # check to see if dealer has black jack
             
             if dealer1.hand.isblackjack: 
                 print(f'{dealer1.getName()} has blackJack')
+                sleep(3)
                 break
     
             
             if dealer1.hand.isBust:
                 print(f'{dealer1.getName()} is Bust!')
+                sleep(3)
                 break
             
             
@@ -164,11 +193,15 @@ def startGame():
             
             if (dealer1.hand.getvalue() < 17) or (dealer1.hand.getvalue() == 17 and dealer1.hand.containsAce):
                 print(f'{dealer1.getName()} takes a HIT!')
+                
+                sleep(3)
+                
                 dealer1.hit(gamedeck)
                 
+                gametable.clearScreen()
                 gametable.displayBoard()
     
-                sleep(2)
+                sleep(3)
                 
                 continue
             else:
@@ -239,7 +272,7 @@ def startGame():
                     print(f'Current Balance: {player1.getBalance()}')                    
             
                     sleep(3)
-                elif player1.hand.getvalue() < dealer.hand.getvalue():
+                elif player1.hand.getvalue() < dealer1.hand.getvalue():
                     #dealer wins
                     print(f'{dealer1.getName()} is the winner')
                 else:
@@ -280,7 +313,8 @@ def startGame():
             dealer1.hand.clearHand()
             dealer1.setIsTurn(False)
             
-            #add condition to test if deck is 50% empty (len <= 26), start a new deck and shuffle
+            gametable.clearScreen()
+            #add condition to test if deck is 75% empty (len <= 13), start a new deck and shuffle
             
             continue
         else:
