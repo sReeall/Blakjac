@@ -8,3 +8,18 @@ Would be great to get some feedback on my newly found coding skills (already kno
 To start the game, take a copy of the project and run the game.py file, enjoy!
 
 Comments welcome 
+
+# Coding Notes:
+
+1. Could have used dictionary/ hash table to look up numeric value of card rank.
+
+In my code, I created a try and except as follows:
+
+        # values assigned automatically based on rank
+        try: # add cast to int
+            self.value = int(rank),
+        except: # must not be 2 - 10 rank
+            # check if ace
+            if rank != 'A' : self.value = 10,
+            else: self.value = 11,1
+			
