@@ -9,7 +9,7 @@ To start the game, take a copy of the project and run the game.py file, enjoy!
 
 Comments welcome 
 
-# Coding Notes:
+## Coding Notes:
 
 1. Could have used dictionary/ hash table to look up numeric value of card rank.
 
